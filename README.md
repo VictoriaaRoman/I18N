@@ -1,3 +1,3 @@
 # I18N
-# Victòria Roman
-# Carla Victorio
+ Victòria Roman
+ Carla Victorio
