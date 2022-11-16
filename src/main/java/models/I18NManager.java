@@ -18,6 +18,17 @@ public class I18NManager {
         return manager;
     }
     public String getText (String lengua, String etiqueta){
-        return data.get(lengua).getString(etiqueta);
+        ResourceBundle resourceBundle = this.data.get(lengua);
+        //la clase ResourceBundle se usa para localizar recursos (ficheros properties)
+        if(resourceBundle == null){
+            resourceBundle = ResourceBundle.getBundle(lengua);
+            this.data.put(lengua,resourceBundle);
+        }
+        return resourceBundle.getString(etiqueta);
+    }
+
+    public void clear() {
+
+        manager = null;
     }
 }
